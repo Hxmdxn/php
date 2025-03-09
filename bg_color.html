@@ -1,0 +1,26 @@
+<!-- 4. Write a JavaScript program to store different colors in an array and change the
+background color of the page using this array elements -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color</title>
+</head>
+<body id="body">
+    <input type="button" onmouseover="changeBg(0)" value="purple">
+    <input type="button" onmouseover="changeBg(1)" value="red">
+    <input type="button" onmouseover="changeBg(2)" value="black">
+    <input type="button" onmouseover="changeBg(3)" value="orange">
+    <input type="button" onmouseover="changeBg(4)" value="blue">   
+<script>
+        function changeBg(i){
+        const colors = ["purple","red","black","orange","blue"]
+        document.body.style.background= colors[i]
+        }
+
+</script>
+</body>
+</html>

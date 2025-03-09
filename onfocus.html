@@ -1,0 +1,27 @@
+<!-- 9. Change the text colour and back colour of a TextBox using onfocus and onBlur
+event -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onfocus, onblur</title>
+</head>
+<body>
+    Enter text:
+    <input type="text" id="txt" onfocus="change(0)" onblur="change(1)">
+
+    <script>
+        function change(i) {
+            if(i==0){
+                document.getElementById("txt").style.backgroundColor = "blue";
+                document.getElementById("txt").style.color = "black";
+            } else{
+                document.getElementById("txt").style.backgroundColor = "purple";
+                document.getElementById("txt").style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>

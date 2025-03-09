@@ -1,0 +1,34 @@
+<!-- 5. Write a JavaScript program to create clock with a timing event -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body onload="startTime()">
+    <h1>Js Clock with Event</h1>
+    <div id="txt"></div>
+    
+    <script>
+        function startTime() {
+            const today = new Date(); // get current date and time
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m=checkTime(m); //adds a leading zero if needed
+            s=checkTime(s); //adds a leading zero if needed
+
+            document.getElementById('txt').innerHTML = h + ':' + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+        function checkTime(i){
+            if (i<10){
+                i = "0" + i  // Adds a leading zero to numbers less than 10 
+            };
+            return i;
+        }
+    </script>
+</body>
+</html>

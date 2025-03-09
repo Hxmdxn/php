@@ -1,0 +1,42 @@
+<!-- 2. Write a JavaScript program to check whether the given sides can form a triangle. If
+yes, find the type (isosceles, equilateral and scalene) and area of the triangle. Use
+prompt dialogue box to accept the sides. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle</title>
+</head>
+<body>
+ <script>
+    var x = parseFloat(prompt("Enter First Side"))
+    var y = parseFloat(prompt("Enter Second Side"))
+    var z = parseFloat(prompt("Enter third Side"))
+
+    function checkTriangle(x, y, z) {
+        if (x + y > z && y + z > x && z + x > y) { //validity of a triangle
+            if (x === y && y === z) { //equal sides
+                document.write("Triangle Type: Equilateral Triangle<br>");
+            } else if (x === y || y === z || z === x) { //any 2 sides equal
+                document.write("Triangle Type: Isosceles Triangle<br>");
+            } else {
+                document.write("Triangle Type: Scalene Triangle<br>");
+            }
+
+            //area
+            var s = (x + y + z) / 2; // Semi-perimeter
+            var area = Math.sqrt(s * (s - x) * (s - y) * (s - z)); // Heron's formula
+
+            document.write("Area of the triangle: " + area.toFixed(2) + " square units");
+        } else {
+            document.write("These sides cannot form a valid triangle.");
+        }
+    }
+
+    checkTriangle(x, y, z);
+
+ </script>   
+</body>
+</html>

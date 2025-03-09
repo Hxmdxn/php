@@ -1,0 +1,39 @@
+<!-- 6. Write a JavaScript Program to validate email based on the following condition
+ Mail id must contain the @ and . character
+ There must be at least one character before and after the @.
+ There must be at least two characters after dot  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <form name="myform" method="POST" onsubmit="return validateEmail();">
+        Email: <input type="email" name="email" placeholder="Enter Email">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <script>
+        function validateEmail() {
+            var email = document.myform.email.value;
+            var atpos = email.indexOf("@");
+            var dotpos = email.lastIndexOf("."); //last dot 
+            if (atpos <1 || dotpos < atpos + 2 || dotpos +2 >= email.length){
+                //atpos <1 - Ensures the @ symbol is not at the beginning of the email.
+                // dotpos < atpos + 2  - (dot) appears at least two characters after the @ symbol.
+                // dotpos + 2 >= email.length - Ensures the . (dot) is not too close to the end of the email.
+                alert("Please enter a valid e-mail address \natpos:" + atpos + "\ndotpos" + dotpos);
+                return false;
+            }
+            else{
+                alert("Email is valid");
+                return true;
+            }
+        }
+    </script>
+
+</body>
+</html>

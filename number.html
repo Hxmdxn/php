@@ -1,0 +1,43 @@
+<!-- 1.Write a JavaScript program to check whether a given number is perfect, abundant
+or deficient. Use alert box to display the output. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Number</title>
+</head>
+<body>
+    <h1> Perfect Number</h1>
+    Enter a number:
+    <input type="text" id="num">
+    <input type="button" value="Find" onclick="findPerfect()">
+
+    <script>
+        function findPerfect() {
+            var n= document.getElementById('num').value
+            var sum = 0;
+
+            for (var i = 1; i < n ; i++ ){   //start from 1 because division with 0 isnt necessary
+                if (n%i==0){  //if it returns zero when divided
+                    sum = sum+i
+                }
+            }
+
+            if (sum==n){   
+                alert("The number is perfect")
+            }
+            else if (sum>n){
+                alert("The number is abundant")
+            }
+            else{
+                alert("The number is deficient")
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- 28 is perfect -->
