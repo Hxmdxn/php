@@ -13,7 +13,7 @@ years. -->
     <script>
         console.log ("Checking whether 1st January is a Sunday between the years 2014 and 2050")
         console.log ("---------------------------------------------------------")
-        for (var year=2014; year <= 2050; year++){
+        for (var year = 2014; year <= 2050; year++){
             var date = new Date(year, 0, 1);  // year - current year in loop, 0 - january, 1 - day
             if (date.getDay() == 0)  //getDay returns Day of the week, 0 - Sunday
             console.log("1st Januray is a Sunday in the year " + year);

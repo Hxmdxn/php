@@ -4,8 +4,7 @@
 <body>
 <form action="" method="POST">
 <h1>Reverse of a string</h1>
-Enter the String:
-<input type="text" name="str" />
+Enter the String: <input type="text" name="str" />
 <input type="submit" name="submit" />
 </form>
 </html>

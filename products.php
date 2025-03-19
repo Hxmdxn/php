@@ -25,7 +25,6 @@ if($_POST)
 $no=$_POST['icode'];
 $name=$_POST['iname'];
 $price=$_POST['iprice'];
-
 $con = pg_connect("host=localhost port=5432 dbname=test user=postgres password=iisj123");
 if($con){
 $qry="insert into products (itemcode,itemname,unitprice) values ($no, '$name', $price)";

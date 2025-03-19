@@ -7,10 +7,11 @@ d. Remove the last element and display
 e. Display the array in reverse order
 f. Search an element in the given array. -->
 
-<html> <body>
+<html> 
+<body>
 <h2>Array Operations</h2><br>
-<form action="" method="post">
 
+<form action="" method="post">
 <?php
 echo <<<HTML
 <br>

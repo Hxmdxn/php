@@ -5,8 +5,7 @@
 <body>
 <h3>Multiplication table (upto 15)</h3>
 <form action="" method="POST">
-Enter a number
-<input type="text" name="num">
+Enter a number: <input type="text" name="num">
 <input type="submit">
 </form>
 </body>

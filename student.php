@@ -10,34 +10,29 @@ register no of the student. -->
 <h3><center>Marksheet</center></h3>
 
 <form method="POST" action="">
-    <label>Reg no:</label>
-    <input type="text" name="txtreg" required/><br><br><br>
+    Reg no:<input type="text" name="txtreg" required/><br><br><br>
     <input type="submit" value="View Results">
 </form>
 
-<!-- if posted
-if not empty
-if connected
-if result found
-if no. of rows  -->
-
 <?php
+
 if ($_POST) {
-    $rg_no = $_POST['txtreg'];
+$rg_no = $_POST['txtreg'];
     if (!empty($rg_no) && is_numeric($rg_no)) {
         $con = pg_connect("host=localhost port=5432 dbname=test user=postgres password=iisj123"); //dhupp
         if ($con) {
             $qry = "SELECT * FROM student WHERE roll_no = $1"; //1 is just a placeholder
             $result = pg_query_params($con, $qry, array($rg_no)); //pg_query_params is used to execute the query
+            
                 if ($result) {
-                        $number_of_rows = pg_num_rows($result); //checks the no. of rows 
+                        $number_of_rows = pg_num_rows($result); //assign the no. of rows 
                     if ($number_of_rows > 0) {
                             while ($row = pg_fetch_assoc($result)) { // fetch each row and store in $row
                         echo "<br>\n";
-                        echo "Roll No: " . htmlspecialchars($row['roll_no']) . " | ";
-                        echo "Name: " . htmlspecialchars($row['name']) . " | ";
-                        echo "Marks: " . htmlspecialchars($row['mark']) . " | ";
-                        echo "Grade: " . htmlspecialchars($row['grade']);
+                        echo "Roll No: " . $row['roll_no'] . " | ";
+                            echo "Name: " . $row['name'] . " | ";
+                            echo "Marks: " . $row['mark'] . " | ";
+                            echo "Grade: " . $row['grade'];
                     }
                     } 
                     else {

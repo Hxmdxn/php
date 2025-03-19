@@ -5,8 +5,7 @@ deficient. -->
 <body>
 <h2>Perfect, Abundant or Deficient</h2>
 <form action="" method="POST">
-Enter the number:
-<input type="text" name="number"/>
+Enter the number: <input type="text" name="number"/>
 <input type="submit" name="submit"/>
 </form>
 </body>
@@ -19,11 +18,12 @@ if($_POST)
 {
 $no = $_POST['number'];
 $sum=0;
-for ($i=1;$i<$no;$i++)  //refer number.html (same logic)
+for ($i=1;$i<$no;$i++)  //same logic as number.html 
 {
 if ($no % $i==0)
 $sum=$sum + $i;
 }
+
 if($sum == $no)
 echo"Perfect Number";
 
